@@ -1,58 +1,77 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import MainIcon from "../assets/icons/MainIcon.astro";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
-  title:string,
-  description: string
+  title: string;
+  description: string;
 }
 
-const {title, description} = Astro.props
-
+const { title, description } = Astro.props;
 ---
-
-
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link class="text-slate-200 dark:text-white" rel="icon" type="image/svg+xml" href="/images/favicon_sorozco.svg" />
+    <link
+      class="text-slate-200 dark:text-white"
+      rel="icon"
+      type="image/svg+xml"
+      href="/images/favicon_sorozco.svg"
+    />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description}>
-    <meta property="og:title" content={title}>
-    <meta property="og:description" content={description}>
-    <meta property="og:image" content="/images/SEOthumb.webp">
-    <meta property="og:url" content="https://www.sergiorozco.com">
-    <meta property="og:site_name" content="Sergio Orozco">
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/SEOthumb.webp" />
+    <meta property="og:url" content="https://www.sergiorozco.com" />
+    <meta property="og:site_name" content="Sergio Orozco" />
     <title>{title}</title>
-    <ViewTransitions></ViewTransitions>
+    <ClientRouter />
   </head>
   <body class="bg-slate-200">
     <!-- Menu Layout -->
-    <nav id="navSection" class="px-6 py-2 z-10 absolute top-0 transition-colors duration-300 text-white right-0 w-full flex justify-between items-center">
-      <a href="/" class="size-12 p-2 rounded-full" aria-label="main-isotype sorozco">
+    <nav
+      id="navSection"
+      class="px-6 py-2 z-10 absolute top-0 transition-colors duration-300 text-white right-0 w-full flex justify-between items-center"
+    >
+      <a
+        href="/"
+        class="size-12 p-2 rounded-full"
+        aria-label="main-isotype sorozco"
+      >
         <MainIcon />
       </a>
       <ul class="navLinks flex text-xl font-semibold normal-case">
-        <li><a class="hover:bg-black/40 rounded-md py-3 px-4 scroll-smooth" href="#linkAbout">About</a></li>
-        <li><a class="hover:bg-black/40 rounded-md py-3 px-4 scroll-smooth" href="#linkPortfolio">Portfolio</a></li>
+        <li>
+          <a
+            class="hover:bg-black/40 rounded-md py-3 px-4 scroll-smooth"
+            href="#linkAbout">About</a
+          >
+        </li>
+        <li>
+          <a
+            class="hover:bg-black/40 rounded-md py-3 px-4 scroll-smooth"
+            href="#linkPortfolio">Portfolio</a
+          >
+        </li>
       </ul>
     </nav>
-    <slot></slot>
+    <slot />
   </body>
 </html>
 
 <style is:global>
-  .isDark { 
+  .isDark {
     @apply text-slate-500 bg-slate-200/25 backdrop-blur-md md:backdrop-blur-none md:bg-transparent;
     a {
       @apply hover:bg-slate-300 rounded-md transition-colors duration-200;
     }
-   }
+  }
   .isLigth {
     @apply text-white;
-   }
+  }
   body {
     font-family: "Barlow", sans-serif;
   }
@@ -75,7 +94,7 @@ const {title, description} = Astro.props
       opacity: 0;
       transform: translateY(10em);
     }
-    to{
+    to {
       opacity: 1;
     }
   }
@@ -84,7 +103,8 @@ const {title, description} = Astro.props
     0% {
       margin-inline: 0em;
     }
-    20%,100% {
+    20%,
+    100% {
       margin-inline: 1em;
       border-bottom-left-radius: 3em;
       border-bottom-right-radius: 3em;
@@ -97,8 +117,7 @@ const {title, description} = Astro.props
       opacity: 0;
     }
     to {
-      opacity: 1
-      @apply bg-gradient-to-b from-transparent to-blue-900;
+      opacity: 1 @apply bg-gradient-to-b from-transparent to-blue-900;
     }
   }
 
@@ -117,7 +136,7 @@ const {title, description} = Astro.props
     margin: 0 auto;
   }
 
-  .reveal{
+  .reveal {
     animation: reveal both;
     animation-timeline: view();
     animation-range: entry 10% contain 30%;
@@ -132,5 +151,4 @@ const {title, description} = Astro.props
   .marqueeSection {
     mask-image: linear-gradient(to left, transparent, black 80%, transparent);
   }
-
 </style>
