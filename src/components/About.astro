@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Resume from "./Resume.astro";
 
 
@@ -35,7 +34,7 @@ let Tools = [
         {
           Tools.map(({ name, url }) => (
             <li class="border border-slate-300 bg-white shadow-sm rounded-md p-4 flex gap-x-2 flex-col w-full h-24 md:h-28 justify-center items-center md:revealTools hover:scale-105 hover:z-10 transition-transform duration-200">
-              <Image
+              <img
                 width="50"
                 height="50"
                 class="size-12"
