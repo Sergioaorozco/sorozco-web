@@ -1,15 +1,21 @@
 ---
+import { Image } from "astro:assets";
 import Resume from "./Resume.astro";
 
+import AstroLogo from "../assets/tools/Astrologo.svg";
+import PiniaLogo from "../assets/tools/PiniaLogo.svg";
+import FirebaseLogo from "../assets/tools/Firebase.svg";
+import VueLogo from "../assets/tools/VueLogo.svg";
+import GitLogo from "../assets/tools/GitLogo.svg";
+import TailwindLogo from "../assets/tools/TailwindLogo.svg";
 
 let Tools = [
-  { name: "Astro", url: "/tools/Astrologo.svg" },
-  { name: "Pinia", url: "/tools/PiniaLogo.svg" },
-  { name: "Firebase", url: "/tools/Firebase.svg" },
-  { name: "VueJs", url: "/tools/VueLogo.svg" },
-  { name: "Git", url: "/tools/GitLogo.svg" },
-  { name: "Tailwind", url: "/tools/TailwindLogo.svg" },
-  // { name: "Figma", url: "/tools/Figma.svg"},
+  { name: "Astro", src: AstroLogo },
+  { name: "Pinia", src: PiniaLogo },
+  { name: "Firebase", src: FirebaseLogo },
+  { name: "VueJs", src: VueLogo },
+  { name: "Git", src: GitLogo },
+  { name: "Tailwind", src: TailwindLogo },
 ];
 ---
 
@@ -32,13 +38,13 @@ let Tools = [
       <h2 class="text-slate-600 text-3xl mb-5">Tools</h2>
       <ul class="grid grid-cols-3 gap-3">
         {
-          Tools.map(({ name, url }) => (
+          Tools.map(({ name, src }) => (
             <li class="border border-slate-300 bg-white shadow-sm rounded-md p-4 flex gap-x-2 flex-col w-full h-24 md:h-28 justify-center items-center md:revealTools hover:scale-105 hover:z-10 transition-transform duration-200">
-              <img
-                width="50"
-                height="50"
+              <Image
+                width={50}
+                height={50}
                 class="size-12"
-                src={url}
+                src={src}
                 loading="lazy"
                 alt={`${name} skill showed in the tools section`}
               />

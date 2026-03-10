@@ -1,6 +1,7 @@
 ---
 import SorozcoMain from "../assets/icons/SorozcoType.astro";
-
+import { Image } from "astro:assets";
+import ColombianFlag from "../assets/images/ColombianFlag.svg";
 ---
 
 <section
@@ -38,10 +39,10 @@ import SorozcoMain from "../assets/icons/SorozcoType.astro";
       </a>
       <!-- Location -->
       <div class="flex gap-x-2 items-center text-white">
-        <img
-          src="/images/ColombianFlag.svg"
-          width="28"
-          height="28"
+        <Image
+          src={ColombianFlag}
+          width={28}
+          height={28}
           class="size-7"
           alt="Colombian flag indicating sorozco location"
           loading="eager"
