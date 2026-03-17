@@ -1,6 +1,5 @@
 ---
 import MainIcon from "../assets/icons/MainIcon.astro";
-import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -28,7 +27,6 @@ const { title, description } = Astro.props;
     <meta property="og:url" content="https://www.sergiorozco.com" />
     <meta property="og:site_name" content="Sergio Orozco" />
     <title>{title}</title>
-    <ClientRouter />
   </head>
   <body class="bg-slate-200">
     <!-- Menu Layout -->
@@ -63,6 +61,9 @@ const { title, description } = Astro.props;
 </html>
 
 <style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
   .isDark {
     @apply text-slate-500 bg-slate-200/25 backdrop-blur-md md:backdrop-blur-none md:bg-transparent;
     a {
