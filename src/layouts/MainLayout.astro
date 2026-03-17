@@ -9,7 +9,7 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <link
@@ -43,14 +43,13 @@ const { title, description } = Astro.props;
       </a>
       <ul class="navLinks flex text-xl font-semibold normal-case">
         <li>
-          <a
-            class="hover:bg-black/40 rounded-md py-3 px-4 scroll-smooth"
-            href="#linkAbout">About</a
+          <a class="hover:bg-black/40 rounded-md py-3 px-4" href="#linkAbout"
+            >About</a
           >
         </li>
         <li>
           <a
-            class="hover:bg-black/40 rounded-md py-3 px-4 scroll-smooth"
+            class="hover:bg-black/40 rounded-md py-3 px-4"
             href="#linkPortfolio">Portfolio</a
           >
         </li>
@@ -61,9 +60,6 @@ const { title, description } = Astro.props;
 </html>
 
 <style is:global>
-  html {
-    scroll-behavior: smooth;
-  }
   .isDark {
     @apply text-slate-500 bg-slate-200/25 backdrop-blur-md md:backdrop-blur-none md:bg-transparent;
     a {
