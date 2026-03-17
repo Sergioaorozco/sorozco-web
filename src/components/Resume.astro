@@ -4,36 +4,30 @@ import Linkedin from "../assets/icons/Linkedin.astro";
 import LinkIcon from "../assets/icons/LinkIcon.astro";
 ---
 
-<div class="mt-8 flex flex-wrap items-center justify-between gap-6 py-2">
-  <div class="flex items-center gap-5">
+<article class="mt-5 flex justify-between items-center rounded-lg py-4">
+  <div class="flex h-10 gap-x-4 rounded-full p-1">
     <a
       href="https://github.com/Sergioaorozco"
       aria-label="Know more about Sergio Orozco on Github"
       target="_blank"
       rel="noopener noreferrer"
-      class="text-slate-500 hover:text-blue-600 transition-all duration-300 hover:scale-110 active:scale-95"
+      class="hover:text-slate-800"><GithubIcon /></a
     >
-      <GithubIcon />
-    </a>
     <a
       href="https://www.linkedin.com/in/sergiorozco/"
       target="_blank"
       aria-label="Read more about Sergio Orozco on Linkedin"
       rel="noopener noreferrer"
-      class="text-slate-500 hover:text-blue-600 transition-all duration-300 hover:scale-110 active:scale-95"
+      class="hover:text-slate-800"><Linkedin /></a
     >
-      <Linkedin />
-    </a>
   </div>
-  
   <a
+    class="py-2 bg-slate-300 border border-slate-400 rounded-md px-5 text-slate-800 font-medium hover:bg-slate-900 hover:text-white transition-colors duration-300 flex gap-x-2"
     href="https://drive.google.com/file/d/1nWZp7ZOwks8Bs5QW5B725-24dfFSpdRR/view?usp=sharing"
     target="_blank"
     aria-label="Download Sergio Orozco's Resume"
     rel="noopener noreferrer"
-    class="inline-flex items-center gap-2.5 px-6 py-3 bg-white border border-slate-200 text-slate-800 font-bold rounded-xl shadow-sm hover:shadow-md hover:border-blue-600 hover:text-blue-600 transition-all duration-300 active:scale-95 uppercase text-xs tracking-widest"
   >
-    <LinkIcon />
-    <span>View Resume</span>
-  </a>
-</div>
+    <span class="size-5 inline-block"><LinkIcon /></span> Download Resume</a
+  >
+</article>
