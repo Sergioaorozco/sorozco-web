@@ -48,6 +48,10 @@ const { title, description } = Astro.props;
     }
   }
 
+  html {
+    scrollbar-gutter: stable;
+  }
+
   body {
     font-family: "Barlow", sans-serif;
     position: relative;
@@ -71,7 +75,8 @@ const { title, description } = Astro.props;
         transparent 1px
       );
     background-size: var(--box-size) var(--box-size);
-    background-position: center top;
+    /* By using 100svh as vertical position, we force a grid line to exist exactly at the transition from Header to Content */
+    background-position: calc(50% + var(--box-size) / 2) 100svh; 
     mask-image: radial-gradient(circle at center, black, transparent 80%);
     z-index: -1;
   }
@@ -102,7 +107,9 @@ const { title, description } = Astro.props;
       margin-inline: 1em;
       border-bottom-left-radius: 3em;
       border-bottom-right-radius: 3em;
-      @apply bg-blue-900 duration-700;
+      /* Using stone palette for consistency */
+      background-color: #1e3a8a; /* blue-900 */
+      transition-duration: 700ms;
     }
   }
 
@@ -111,7 +118,9 @@ const { title, description } = Astro.props;
       opacity: 0;
     }
     to {
-      opacity: 1 @apply bg-gradient-to-b from-transparent to-blue-900;
+      opacity: 1;
+      /* Custom background-image via CSS to avoid tailwind @apply issue in style tag */
+      background-image: linear-gradient(to bottom, transparent, #1e3a8a);
     }
   }
 
@@ -151,5 +160,7 @@ const { title, description } = Astro.props;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: white;
+    border: 1px solid #e2e8f0; /* slate-200 */
   }
 </style>
