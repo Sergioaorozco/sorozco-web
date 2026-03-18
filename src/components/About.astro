@@ -21,13 +21,13 @@ let Tools = [
 
 <main class="wrapper" style="padding-block: calc(var(--box-size) * 1);">
   <section
-    class="flex flex-col md:flex-row"
+    class="flex flex-col md:flex-row md:items-start"
     style="gap: var(--box-size);"
     id="linkAbout"
   >
     <article
-      class="grid-snapped text-slate-700 reveal md:w-1/2 bg-white border border-slate-200"
-      style="--rows: 4;"
+      class="grid-snapped text-slate-700 flex-1 bg-white border border-slate-200"
+      style="--rows: 3;"
     >
       <h2
         class="text-3xl font-bold tracking-tight text-slate-800 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-12 after:h-1 after:bg-blue-600 after:rounded-full"
@@ -36,7 +36,7 @@ let Tools = [
       </h2>
       <div class="mt-8 space-y-6">
         <p
-          class="text-lg md:text-xl leading-relaxed text-pretty text-slate-600"
+          class="text-sm md:text-lg leading-relaxed text-pretty text-slate-600"
         >
           Mid-level frontend developer crafting <span
             class="text-blue-600 font-semibold"
@@ -44,21 +44,21 @@ let Tools = [
           > with VueJs and Astro.
         </p>
         <p
-          class="text-lg md:text-xl leading-relaxed text-pretty text-slate-600"
+          class="text-sm md:text-lg leading-relaxed text-pretty text-slate-600"
         >
           Proficient in agile methodologies (SAFe) and teamwork, I bring a
           strong work ethic and passion for excellence to help your team achieve
           its goals.
         </p>
       </div>
-      <div class="mt-8">
+      <div>
         <Resume />
       </div>
     </article>
 
     <article
-      class="grid-snapped reveal md:w-1/2 bg-white border border-slate-200"
-      style="--rows: 6;"
+      class="grid-snapped flex-1 bg-white border border-slate-200"
+      style="--rows: 2;"
     >
       <div class="inline-block mb-6">
         <h2

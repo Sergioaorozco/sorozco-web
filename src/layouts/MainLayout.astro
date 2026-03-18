@@ -1,4 +1,5 @@
 ---
+import HeaderSection from "../components/HeaderSection.astro";
 import Nav from "../components/Nav.astro";
 
 interface Props {
@@ -30,13 +31,21 @@ const { title, description } = Astro.props;
   </head>
   <body class="">
     <Nav />
+    <HeaderSection />
     <slot />
   </body>
 </html>
 
 <style is:global>
   :root {
-    --box-size: min(calc(100vw / 11), 122px);
+    --grid-cols: 6;
+    --box-size: min(calc(100vw / var(--grid-cols)), 122px);
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --grid-cols: 12;
+    }
   }
 
   body {
@@ -117,8 +126,9 @@ const { title, description } = Astro.props;
   }
 
   .wrapper {
-    max-inline-size: calc(var(--box-size) * 11);
+    max-inline-size: calc(var(--box-size) * var(--grid-cols));
     margin: 0 auto;
+    width: 100%;
   }
 
   .reveal {
@@ -134,10 +144,12 @@ const { title, description } = Astro.props;
   }
 
   .grid-snapped {
-    --rows: 4;
+    --rows: 3;
+    box-sizing: border-box;
     min-height: calc(var(--box-size) * var(--rows));
     padding: calc(var(--box-size) / 4);
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 </style>
