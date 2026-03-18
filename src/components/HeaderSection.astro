@@ -8,7 +8,9 @@ import ColombianFlag from "../assets/images/ColombianFlag.svg";
   class="min-h-svh flex flex-col gap-y-6 justify-center items-center bg-stone-900 p-2 changeW clipBackground relative"
   data-background="dark"
 >
-  <article class="text-white px-10 w-full max-w-screen-lg mx-auto animate-fade-up animate-duration-1000">
+  <article
+    class="text-white px-10 w-full max-w-screen-lg mx-auto animate-fade-up animate-duration-1000"
+  >
     <SorozcoMain />
     <span
       class="py-3 w-full flex flex-col md:flex-row justify-center items-center gap-2"
@@ -53,20 +55,18 @@ import ColombianFlag from "../assets/images/ColombianFlag.svg";
   </div>
 </section>
 
-
 <style>
-
-@keyframes fade-up {
+  @keyframes fade-up {
     0% {
-        opacity: 0;
-        transform: translateY(2rem)
+      opacity: 0;
+      transform: translateY(2rem);
     }
 
     to {
-        opacity: 1;
-        transform: translateY(0)
+      opacity: 1;
+      transform: translateY(0);
     }
-}
+  }
 
   .animate-fade-up {
     animation: fade-up 3s both;

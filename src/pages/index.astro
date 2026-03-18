@@ -1,16 +1,16 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import AboutMe from "../components/About.astro"
-import HeaderSection from "../components/HeaderSection.astro"
-import Portfolio from "../components/Portfolio.astro"
+import AboutMe from "../components/About.astro";
+import HeaderSection from "../components/HeaderSection.astro";
+import Portfolio from "../components/Portfolio.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<MainLayout title="Sergio Orozco | Frontend Developer" description="Web Portfolio">
-  <HeaderSection />
-  <div class="pb-10 px-6">
-    <AboutMe />
-    <Portfolio/>
-    <Footer/>
-  </div>
+<MainLayout
+  title="Sergio Orozco | Frontend Developer"
+  description="Web Portfolio"
+>
+  <AboutMe />
+  <Portfolio />
+  <Footer />
 </MainLayout>
